@@ -3,6 +3,13 @@
 # Run in PowerShell as Administrator
 # ===================================================================
 
+# -- Check winget --------------------------------------------------
+if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
+    Write-Host "[!] winget non disponible." -ForegroundColor Red
+    Write-Host "    Ouvrez le Microsoft Store, mettez a jour 'App Installer', puis relancez ce script." -ForegroundColor Yellow
+    exit 1
+}
+
 # -- WinUtil (debloat, tweaks) -------------------------------------
 Write-Host "Lancement de WinUtil..." -ForegroundColor Cyan
 irm "https://christitus.com/win" | iex
