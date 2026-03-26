@@ -1,11 +1,15 @@
 # New PC Setup
 
-One-liner Windows PC setup: WinUtil debloat + Dell Command Update.
+Ouvrir **PowerShell en Administrateur** pour chaque commande.
 
-## Usage
-
-Ouvrir **PowerShell en Administrateur** et coller :
+## 1. WinUtil (debloat + tweaks)
 
 ```powershell
-irm "https://raw.githubusercontent.com/AbelSeba/new-pc-setup/main/setup.ps1" | iex
+irm "https://christitus.com/win" | iex
+```
+
+## 2. Dell Command Update
+
+```powershell
+winget install --id Dell.CommandUpdate -e --accept-package-agreements --accept-source-agreements
 ```
